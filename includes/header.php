@@ -1,5 +1,16 @@
 <?php
+$message = "";
 
+if ($email === $emailValide && $password === $passwordValide) {
+        $_SESSION['email']  = $email;
+        $_SESSION['nom']    = $nom;
+        $_SESSION['prenom'] = $prenom;
+        $message = "Bonne authentification";
+
+        $message= "bonjour, [$prenom],Accueil,Ajouter un jeu,Deconnexion";
+        }else{
+        $message= "Accueil,Inscription et Connexion";   
+        }
 
 
 
