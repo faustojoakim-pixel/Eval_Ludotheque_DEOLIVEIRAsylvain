@@ -6,18 +6,21 @@ $message="";
 if(isset($_POST['submit'])){
     $_SESSION['email'] = $_POST['login'];
     $_SESSION['password'] = $_POST['password'];
-    $_SESSION[ 'nom'] = $_POST ['identifiant'];
-    $_SESSION [ 'prenom'] = $_POST ['identifiant'];
+    $_SESSION[ 'nom'] = $_POST ['nom'];
+    $_SESSION [ 'prenom'] = $_POST ['prenom'];
 
 
-if(isset($_POST['email'])){
-     $message = $_SESSION['identifiant'] ." : ".$_SESSION['password'] {
-       echo ("bonne authentification");
+ if ($email === $emailValide && $password === $passwordValide) {
+        $_SESSION['email']  = $email;
+        $_SESSION['nom']    = $nom;
+        $_SESSION['prenom'] = $prenom;
+        $message = "Bonne authentification";
         }else{
-         echo ("Email et/ou mot de passe incorrect ");
+         $message ="Email et/ou mot de passe incorrect ";
      }
-
 }
+}
+
 
 ?>
 
@@ -36,11 +39,26 @@ if(isset($_POST['email'])){
             <h2>Connexion</h2>
             <form action="" method="post">
                 <input type="text" name="nom">
-                <input type= "text" name "prenom">
+                <input type= "text" name="prenom">
                 <input type="text" name="password">
+                <input type="text" name="email>
                 <input type="submit" name="submit">
-            </form>
-            <p><?php echo("Vous etes bien identifié") ?></p>
+               </form>
+
+
+
+                <?php if ($message !== ""): ?>
+                <p><?= htmlspecialchars($message) ?></p>
+            <?php endif; ?>
+                       
+                 <?php if (isset($_SESSION['email'])): ?>
+                <p>Vous êtes bien identifié(e),
+                   <?= htmlspecialchars($_SESSION['prenom'] . ' ' . $_SESSION['nom']) ?>.</p>
+
+                             
+
+          
+            <p><?php endif; ?>
         </section>
     </main>
 </body>
