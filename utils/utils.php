@@ -1,4 +1,5 @@
 <?php
+session_start();
 function FormatJoueurs(int $min, int $max):string
 {
     if($min === 1 && $max === 1) {

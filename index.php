@@ -1,4 +1,5 @@
 <?php
+session_start();
 try {
 $pdo = new PDO('mysql:host=localhost;dbname=ludotheque','root','root',[PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 $request = $pdo ->prepare('SELECT j.titre, c.nom_categorie FROM jeu AS j INNER JOIN categorie AS c ON j. id_categorie = c.id_categorie ORDER BY titre;');

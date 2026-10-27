@@ -1,4 +1,5 @@
 <?php
+session_start();
 $message = "";
 
 if ($email === $emailValide && $password === $passwordValide) {
@@ -51,9 +52,9 @@ if ($email === $emailValide && $password === $passwordValide) {
     <header>
         <nav>
             <ul>
-                <li><a href="index.php">Acceuil</a></li>
-                 <li><a href="inscription.php">Acceuil</a></li>
-                 <li><a href="connexion.php">Acceuil</a></li>
+                <li><a href="index.php">accueil</a></li>
+                 <li><a href="inscription.php">inscription</a></li>
+                 <li><a href="connexion.php">connexion</a></li>
 
 </ul>
 </nav>
