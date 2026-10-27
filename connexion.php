@@ -19,7 +19,7 @@ if(isset($_POST['submit'])){
          $message ="Email et/ou mot de passe incorrect ";
      }
 }
-}
+
 
 
 ?>
@@ -29,7 +29,7 @@ if(isset($_POST['submit'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Documentconnexion ludotheque</title>
 </head>
 <body>
     <?php include('index.php') ?>
